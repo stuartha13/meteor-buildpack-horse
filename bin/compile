@@ -66,6 +66,11 @@ echo "-----> Installing meteor"
 curl -sS https://install.meteor.com | HOME="$METEOR_DIR" /bin/sh
 METEOR="$METEOR_DIR/.meteor/meteor" # The meteor binary.
 
+# If we use npm in the project, run npm install.
+if [ -e "$APP_SOURCE_DIR"/package.json ]; then
+  cd "$APP_SOURCE_DIR" && npm install
+fi
+
 #
 # Build the meteor app!
 #

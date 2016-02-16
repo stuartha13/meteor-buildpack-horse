@@ -70,7 +70,6 @@ METEOR="$METEOR_DIR/.meteor/meteor" # The meteor binary.
 if [ -e "$APP_SOURCE_DIR"/package.json ]; then
   echo "-----> Installing NPM packages"
   cd "$APP_SOURCE_DIR"
-  rm -r node_modules
   npm rebuild && npm install
 fi
 
